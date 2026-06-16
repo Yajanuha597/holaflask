@@ -30,3 +30,23 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/yajanuha597/holaflask:latest
+      - name: Mostrar variables (solo locales,, no secretos)
+        run: |
+          echo "Probando conexiom SSH con:"   
+          echo "Host: ${{secrets.VPS_HOST}}"
+          echo "Usuario: ${{secrets.VPS_USER}}"
+          echo "Puerto: ${{secrets.VPS_SSH_PORT}}:"
+          echo "Password: ${{secrets.VPS_PASSWORD}}"
+
+      - name: Probar la ssh en el 
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{secrets.VPS_HOST}}
+          username: ${{secrets.VPS_USER}}
+          password: ${{secrets.VPS_PASSWORD}}
+          script: |
+            echo "Probando conexion ssh en el vps"
+            hostname
+            whoami
+            uptime
+           
