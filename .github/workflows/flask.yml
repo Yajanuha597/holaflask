@@ -35,7 +35,7 @@ jobs:
         run: |
           echo "HOST=${{ secrets.VPS_HOST }}"
           echo "USER=${{ secrets.VPS_USER }}"
-          echo "PORT=22"
+          echo "PORT=1003"
 
       - name: Probar SSH
         uses: appleboy/ssh-action@v1
@@ -43,7 +43,7 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           password: ${{ secrets.VPS_PASSWORD }}
-          port: 22
+          port: 1003
           timeout: 120s
           command_timeout: 120s
           script: |
