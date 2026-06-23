@@ -1,0 +1,5 @@
+services:
+  holaflask:
+    image: ghcr.io/yajanuha597/holaflask:latest
+    ports:
+      - "5000:5000"
