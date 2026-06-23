@@ -79,6 +79,6 @@ jobs:
 
             docker pull ghcr.io/yajanuha597/holaflask:latest
 
-            docker stack deploy -c deploy.yml --with-registry-auth holaflask
+            docker stack deploy -c deploy.yml borrar
 
             docker ps
